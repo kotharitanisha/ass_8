@@ -1,0 +1,147 @@
+
+{
+  "info": {
+    "_postman_id": "c7d4e2a1-9b63-4f85-a2d6-8e1c5b7f9034",
+    "name": "College Student Management REST API",
+    "description": "Postman Collection to test CRUD operations for College Student Records",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Add Student Record (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"rollNo\": \"205\",\n  \"name\": \"Priya Sharma\",\n  \"email\": \"priya.sharma@college.edu\",\n  \"department\": \"Information Technology\",\n  \"marks\": 88\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "description": "Adds a new student record to the MongoDB database."
+      },
+      "response": []
+    },
+    {
+      "name": "2. Retrieve All Student Records (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "description": "Retrieves all registered student records."
+      },
+      "response": []
+    },
+    {
+      "name": "3. Search Student by Roll Number (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/students/205",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students",
+            "205"
+          ]
+        },
+        "description": "Retrieves an individual student using their roll number or MongoDB ID."
+      },
+      "response": []
+    },
+    {
+      "name": "4. Modify Student Record (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"marks\": 95,\n  \"department\": \"Computer Engineering\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/students/205",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students",
+            "205"
+          ]
+        },
+        "description": "Updates the marks and department of the specified student."
+      },
+      "response": []
+    },
+    {
+      "name": "5. Remove Student Record (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/students/205",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "students",
+            "205"
+          ]
+        },
+        "description": "Deletes the specified student record from the database."
+      },
+      "response": []
+    }
+  ]
+}
